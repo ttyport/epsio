@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/normalize.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
+    <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
+    <meta charset="utf-8">
+    <title>Главная | epsio</title>
+  </head>
+
+  <body>
+    <header> <img src={{ url_for('static',filename='img/icon.png') }} alt="logo" class="logo" width="40" height="40">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/home">Главная</a></li>
+          <li><a href="/chat">Мессенджер</a></li>
+          <li><a href="/profile">Профиль</a></li>
+        </ul>
+      </nav>
+    </header>
+    <center>
+    <div class="meet">
+      <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge">
+      <h1 class="title">{{ title }}</h1>
+      <h2 class="title"> {{ bio }}</h2>
+      <div class="btn" id="btn">
+      <input type=image id="like" class="like" src={{ url_for('static',filename='img/heart.png') }} width="20px" height="20px" alt="like">
+      <input type=image id="dislike" class="like" value="dislike" src={{ url_for('static',filename='img/cross.png') }} width="20px" height="20px" alt="dislike">
+      </div>
+    </div>
+    </center>
+  </body>
+
+</html>
+

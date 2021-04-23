@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
+    <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
+    <title>Регистрация</title>
+</head>
+<body>
+<center>
+    <div>
+        <table>
+            <tr>
+              <th>
+                <h1>
+                Приветствуем Вас на epsio!
+                </h1>
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <h2>
+                Epsio - сервис для знакомства собачек
+                </h2>
+              </th>
+            </tr>
+	     <tr>
+		<th>
+		  <h3>
+		    {{ warn }}
+		  </h3>
+	        </th>
+	    </tr>
+            <form method="post" name="login">
+              <tr>
+                <th>
+                  <input class="input" type="text" name="login" placeholder="Придумайте имя пользователя:">
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <input class="input" type="password" name="password" placeholder="Придумайте пароль:">
+                </th>
+              </tr>
+              <tr>
+                <th>
+                <input class="input" type="tel" name="phone" placeholder="Номер телефона:">
+                </th>
+              </tr>
+              <tr>
+                <th>
+                <input class="input" type="email" name="email" placeholder="Ваш e-mail:">
+                </th>
+              </tr>
+              <tr>
+                <th>
+                <select name="district">
+                <option value="" disabled selected>Ваш федеральный округ</option>
+                  {% for x in districts %}
+                    <option value="{{x[0]}}">{{x[1]}}</option>
+                  {% endfor %}
+                </select>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                </th>
+              </tr>
+
+             <tr>
+                <th>
+                  <button type="submit">Зарегистрироваться</button>
+                </th>
+             </tr>
+            </form>
+        </table>
+    </div>
+</center>
+</body>
+</html>
+
+

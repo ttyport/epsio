@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/normalize.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
+    <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
+    <meta charset="utf-8">
+    <title>Собачка добавлена!</title>
+  </head>
+
+  <body>
+    <header>
+      <img src={{ url_for('static',filename='img/icon.png') }} alt="logo" class="logo" width="40" height="40">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/home">Главная</a></li>
+          <li><a href="/chat">Мессенджер</a></li>
+          <li><a href="/profile">Профиль</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="added">
+      <center>
+        <h1>Собачка добавлена!</h1>
+        <a href="http://epsio.ru/home">
+          <input type="button" class="add" value="Вернуться">
+        </a>
+      </center>
+    </div>
+  </body>
+
+</html>
+

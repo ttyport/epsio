@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/normalize.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
+    <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
+    <meta charset="utf-8">
+    <title>Добавление собачки</title>
+  </head>
+
+  <body>
+    <header>
+      <img src={{ url_for('static',filename='img/icon.png') }} alt="logo" class="logo" width="40" height="40">
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/home">Главная</a></li>
+          <li><a href="/chat">Мессенджер</a></li>
+          <li><a href="/profile">Профиль</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 style="color: #cf6679;">{{ warn }}</h1>
+    <h1>Хотите добавить песеля? Вы по адресу!</h1>
+    <center>
+    <div>  
+      <table>
+        <form method="post" name="login" enctype="multipart/form-data">
+          <tr>
+            <th>
+              <input class="input" type="text" name="name" placeholder="Кличка песеля:">
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <select name="sex">
+                <option value="" disabled selected>Пол:</option>
+                <option value="male">Мальчик</option>
+                <option value="female">Девочка</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <select name="breed">
+                <option value="" disabled selected>Порода:</option>
+                {% for x in breeds %}
+                <option value="{{x[0]}}">{{x[1]}}</option>
+                {% endfor %}
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <input type="text" name="skills" class="skills" placeholder="Навыки и умения:">
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <input placeholder="Дата рождения:" name="date" type="text" onfocus="(this.type='date')">
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <input placeholder="Фото песеля:" name="file" type="text" accept=".png,.jpg,.jpeg" onfocus="(this.type='file')">
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <button type="submit">Добавить!</button>
+            </th>
+          </tr>
+        </form>
+      </table>
+    </div>
+  </body>
+  <center>
+
+</html>
+
