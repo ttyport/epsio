@@ -8,7 +8,35 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
     <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="ebudg75hfvFRqpqxT5jJlgiz4mol0n5KRLH5qWBAGS8" />
     <title>Главная | epsio</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(function() {
+          $('#like').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/like',
+                function(data) {
+              //do nothing
+            });
+	    location.reload();
+            return false;
+          });
+        });
+    </script>
+    <script type=text/javascript>
+        $(function() {
+          $('#dislike').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/dislike',
+                function(data) {
+              //do nothing
+            });
+	    location.reload();
+            return false;
+          });
+        });
+    </script>
   </head>
 
   <body>
@@ -22,16 +50,17 @@
       </nav>
     </header>
     <center>
-    <div class="meet">
-      <img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg" alt="doge">
-      <h1 class="title">{{ title }}</h1>
-      <h2 class="title"> {{ bio }}</h2>
-      <div class="btn" id="btn">
-      <input type=image id="like" class="like" src={{ url_for('static',filename='img/heart.png') }} width="20px" height="20px" alt="like">
-      <input type=image id="dislike" class="like" value="dislike" src={{ url_for('static',filename='img/cross.png') }} width="20px" height="20px" alt="dislike">
+      <div class="meet">
+        <img src="{{ pic }}" alt="doge">
+        <h1 class="title">{{ title }}</h1>
+        <h2 class="title"> {{ bio }}</h2>
+        <div class="btn" id="btn">
+	  <button id="like" class='like'></button>
+          <button id="dislike" class='like'></button>
+        </div>
       </div>
-    </div>
     </center>
+  <h1>{{ log }}</h1>
   </body>
 
 </html>

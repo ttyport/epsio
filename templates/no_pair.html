@@ -8,11 +8,12 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold">
     <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
     <meta charset="utf-8">
-    <title>Профиль | epsio</title>
+    <title>Главная | epsio</title>
   </head>
 
   <body>
-    <header> <img src={{ url_for('static',filename='img/icon.png') }} alt="logo" class="logo" width="40" height="40">
+    <header>
+      <img src={{ url_for('static',filename='img/icon.png') }} alt="logo" class="logo" width="40" height="40">
       <nav>
         <ul class="nav_links">
           <li><a href="/home">Главная</a></li>
@@ -21,22 +22,14 @@
         </ul>
       </nav>
     </header>
-    <div class="big_container">
-      {% for x in dogs %}
-        <div class="dog_container">
-          <img src={{ x[0] }} alt="doge" class="dog_thm">
-          <div class="small_container">
-            <h1 class="dog_name">{{ x[1] }}</h1>
-            <h3 class="additional">{{ x[2] }}</h3>
-          </div>
-        </div>
-      {% endfor %}
-      <a href="http://epsio.ru/profile/add">
-        <input type="button" class="add" value="Добавить eще!" style="width: 100%">
-      </a>
-      <a href="http://epsio.ru/logout">
-	<input type=button class=add value="Выйти из аккаунта" style="width: 100%">
-      </a>
+    <div class="oops">
+    <center><img src="{{ url_for('static',filename='img/oops.jpg') }}" alt="oops" width=50% height=50%></center>
+
+      <h1 style="font-size: 30pt;">
+        К сожалению, подходящих Вам собачек нет :(
+      </h1>
+      <center>
+      </center>
     </div>
   </body>
 

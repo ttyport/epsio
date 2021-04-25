@@ -9,6 +9,21 @@
     <link rel="icon" href="{{ url_for('static',filename='img/icon.png') }}">
     <meta charset="utf-8">
     <title>Добавление собачки</title>
+    <script>
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+      var yyyy = today.getFullYear();
+       if(dd<10){
+          dd='0'+dd
+       }
+       if(mm<10){
+          mm='0'+mm
+       }
+
+       today = yyyy+'-'+mm+'-'+dd;
+       document.getElementById("date").setAttribute("max", today);
+    </script>
   </head>
 
   <body>
@@ -25,7 +40,7 @@
     <h1 style="color: #cf6679;">{{ warn }}</h1>
     <h1>Хотите добавить песеля? Вы по адресу!</h1>
     <center>
-    <div>  
+    <div class="container">  
       <table>
         <form method="post" name="login" enctype="multipart/form-data">
           <tr>
@@ -54,12 +69,12 @@
           </tr>
           <tr>
             <th>
-              <input type="text" name="skills" class="skills" placeholder="Навыки и умения:">
+              <input type="text" name="skills" class="skills" placeholder="Описание:" maxlength="100">
             </th>
           </tr>
           <tr>
             <th>
-              <input placeholder="Дата рождения:" name="date" type="text" onfocus="(this.type='date')">
+              <input id="date" placeholder="Дата рождения:" name="date" type="text" onfocus="(this.type='date')">
             </th>
           </tr>
           <tr>

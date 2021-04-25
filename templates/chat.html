@@ -22,21 +22,17 @@
       </nav>
     </header>
     <div class="big_container">
+      <h1>У нас сломался чат, поэтому мы лишь можем дать вам контактные данные :( </h1>
       {% for x in dogs %}
         <div class="dog_container">
           <img src={{ x[0] }} alt="doge" class="dog_thm">
           <div class="small_container">
+            <h1 style="font-size: 40pt;">Ого, да у вас взаимная симпатия!</h1>
             <h1 class="dog_name">{{ x[1] }}</h1>
             <h3 class="additional">{{ x[2] }}</h3>
           </div>
         </div>
       {% endfor %}
-      <a href="http://epsio.ru/profile/add">
-        <input type="button" class="add" value="Добавить eще!" style="width: 100%">
-      </a>
-      <a href="http://epsio.ru/logout">
-	<input type=button class=add value="Выйти из аккаунта" style="width: 100%">
-      </a>
     </div>
   </body>
 
